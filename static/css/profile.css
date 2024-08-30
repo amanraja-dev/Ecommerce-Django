@@ -1,0 +1,37 @@
+.profile
+{
+    margin: 25px 0px;
+}
+
+.profile-container
+{
+    padding: 10px;
+}
+.profile-row
+{
+    margin: 0px 100px;
+    padding: 5px;
+    display: flex;
+}
+.profile-col
+{
+    max-width: 350px;
+    padding: 50px 40px;
+    border: 1px solid gray;
+    border-radius: 25px;
+}
+.profile-col:hover
+{
+    box-shadow: 0px 5px 10px 0px gray;
+}
+.profile-col h1
+{
+    font-size: 21px;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 10px;
+}
+.profile-col p
+{
+    font-weight: bold;
+    padding: 5px;
+}

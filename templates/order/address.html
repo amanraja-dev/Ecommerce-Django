@@ -1,0 +1,100 @@
+{% extends 'layout/base.html' %}
+
+
+{% block title %}
+Place order
+{% endblock title %}
+
+
+{% block main %}
+
+{% load static %}
+
+<!--Signup content section-->
+<div class="root-container">
+
+  <div class="font-style form-div-size form-border form-pos">
+    <!--Text section-->
+    <div>
+      <h1 class="h1-f-size">Add your shipping address.</h1>
+      <p style="margin-top: 4px;">Welcome to Ourshop! Enter your address to start shopping.</p>
+    </div>
+
+    <!--Form section-->
+    <form method="post" action="{% url 'save_payment_address'%}" name="myform">
+      {% csrf_token %}
+      <!--Input section-->
+      <div class="top-margin">
+        <input type="text" name="mobile" class="input-box" placeholder="Mobile number" minlength="10" maxlength="10"
+          required="">
+      </div>
+
+      <div class="top-margin">
+        <input type="text" name="state" class="input-box" placeholder="State" minlength="2" maxlength="20" required="">
+      </div>
+
+      <div class="top-margin">
+        <input type="text" name="city" class="input-box" placeholder="City" minlength="3" maxlength="20" required="">
+      </div>
+
+      <div class="top-margin">
+        <input type="number" name="pincode" class="input-box" placeholder="Pin Code" minlength="6" maxlength="6"
+          required="">
+      </div>
+
+      <!-- Save Button section-->
+      <div class="top-margin">
+        <button type="submit" class="submit-btn" onclick="onlynumber()">Save</button>
+      </div>
+
+    </form>
+  </div>
+
+
+  <!--Address card-->
+  {% for i in address %}
+  <div class="user-address-container">
+
+    <div class="card-body p-6">
+      <form action="{% url 'payment' %}">
+        <div class="address-title-pos">
+
+          <input type="radio" name="address_id" id="custadd{{forloop.counter}}" value="{{i.address_id}}" checked="">
+          <label class="address-title" for="homeRadio">Address {{forloop.counter}}
+          </label>
+        </div>
+
+        <!-- address -->
+        <p class="address-details">{{i.user.first_name}} {{i.user.last_name}}<br>
+
+          {{i.mobile}}, <br>
+
+          {{i.city}}, {{i.state}},<br>
+
+          {{i.zipcode}}</p>
+        <!-- btn -->
+
+        <div class="delete-address">
+          <a href="{% url 'delete_payment_address' i.address_id %}">Delete
+          </a>
+        </div>
+    </div>
+  </div>
+
+  {% endfor %}
+
+  <div class="form-div-size">
+
+    <div>
+      <h1 class="h1-f-size">Beform Conform Product choose your Shipping Address.</h1>
+      <p style="margin-top: 4px;">You are one step away to buy these product!</p>
+    </div>
+
+    <button type="submit" class="confirm_order_button">Confirm Order</button>
+
+  </div>
+  </form>
+</div>
+
+<!--Footer-->
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends 'layout/base.html' %}
+
+
+{% block title %}
+About 
+{% endblock title %}
+    
+
+{% block main %}
+
+{% load static %}
+
+<!-- Testimonial of Students -->
+<div class="testimonial">
+    <h1>Developer of project</h1>
+    <div class="row">
+        <div class="col-3">
+            <i class="fa fa-quote-left"></i>
+            <p>Google Chief Executive Sundar Pichai
+                received restricted stock worth about $199 million,
+                according to a regulatory filing by Google parent company Alphabet (GOOGL).
+            </p>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <img src="{% static 'img/developer-img/aman.jpeg' %}" alt="">
+            <h3>Aman Raja</h3>
+        </div>
+        <div class="col-3">
+            <i class="fa fa-quote-left"></i>
+            <p>You shop at Amazon. I shop at Amazon.
+                Everybody shops at Amazon. You know who gets rich when we do that?
+                Mr. Jeff Bezos, the richest guy on the planet and also, easily the
+                most jacked self-made billionaire. Now go back and read the word 'jacked'.
+            </p>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <img src="{% static 'img/developer-img/rehan.jpeg' %}" alt="">
+            <h3>Md Rehan</h3>
+        </div>
+        <div class="col-3">
+            <i class="fa fa-quote-left"></i>
+            <p>Sagar Group of Institutions-SISTec has the most
+                talented and dedicated leaders in Bhopal under its Fraternity,
+                whom we call "SISTec Icons". They are not only best academically,
+                but they also possess sound knowledge of corporates with high standards
+                of moral and ethical values making them the true role mode
+            </p>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <img src="{% static 'img/developer-img/sahil.jpeg' %}" alt="">
+            <h3>Sahil Mansuri</h3>
+        </div>
+    </div>
+</div>
+
+<!--Footer-->
+{% endblock %}

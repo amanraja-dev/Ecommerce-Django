@@ -1,0 +1,85 @@
+{% extends 'layout/base.html' %}
+
+
+{% block title %}
+Home
+{% endblock title %}
+
+
+{% block main %}
+
+{% load static %}
+
+<!--Signup content section-->
+<div class="root-container">
+
+  <div class="font-style form-div-size form-border form-pos">
+    <!--Text section-->
+    <div>
+      <h1 class="h1-f-size">Add your shipping address.</h1>
+      <p style="margin-top: 4px;">Welcome to Ourshop! Enter your address to start shopping.</p>
+    </div>
+
+    <!--Form section-->
+    <form method="post" action="{% url 'address'%}">
+      {% csrf_token %}
+      <!--Input section-->
+      <div class="top-margin">
+        <input type="text" name="mobile" class="input-box" placeholder="Mobile" minlength="10" maxlength="10"
+          required="" oninput="validateNumber(this)">
+      </div>
+
+      <div class="top-margin">
+        <input type="text" name="state" class="input-box" placeholder="State" minlength="2" maxlength="20" required=""
+          oninput="validateStateCity(this)">
+      </div>
+
+      <div class="top-margin">
+        <input type="text" name="city" class="input-box" placeholder="City" minlength="3" maxlength="20" required=""
+          oninput="validateStateCity(this)">
+      </div>
+
+      <div class="top-margin">
+        <input type="text" name="pincode" class="input-box" placeholder="Pin Code" minlength="6" maxlength="6"
+          required="" oninput="validateNumber(this)">
+      </div>
+
+      <!-- Save Button section-->
+      <div class="top-margin">
+        <button type="submit" class="submit-btn">Save</button>
+      </div>
+
+    </form>
+  </div>
+
+  <!--Address card-->
+  {% for i in address %}
+  <div class="user-address-container">
+    <div class="card-body p-6">
+      <div class="address-title-pos">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="homeRadio" checked="">
+        <label class="address-title" for="homeRadio">
+          Address {{forloop.counter}}
+        </label>
+      </div>
+      <!-- address -->
+      <p class="address-details">{{i.user.first_name}} {{i.user.last_name}}<br>
+
+        {{i.mobile}}, <br>
+
+        {{i.city}}, {{i.state}},<br>
+
+        {{i.zipcode}}</p>
+      <!-- btn -->
+
+      <div class="delete-address">
+        <a href="{% url 'delete_address' i.address_id %}">Delete
+        </a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+</div>
+
+{% endblock %}

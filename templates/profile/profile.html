@@ -1,0 +1,54 @@
+{% extends 'layout/base.html' %}
+
+
+{% block title %}
+Home 
+{% endblock title %}
+    
+
+{% block main %}
+
+{% load static %}
+
+
+    <div class="profile">
+        <div class="profile-container">
+            <div class="profile-row">
+                
+                <div class="profile-col">
+                    <h1>Profile</h1>
+                    <p>{{user.first_name}}  {{user.last_name}}</p>
+                    <p>{{user.email}}</p>
+                </div>
+                
+
+                <div class="">
+                    <!--Address card-->
+                    {% for i in address %}
+                    <div class="user-address-container">
+                        <div class="card-body p-6">
+                            <div class="address-title-pos">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="homeRadio" checked="">
+                                <label class="address-title" for="homeRadio">
+                                Address {{forloop.counter}}
+                                </label>
+                            </div>
+                            <!-- address -->
+                            <p class="address-details">{{i.user.first_name}} {{i.user.last_name}}<br>
+                            {{i.mobile}}, <br>
+                            {{i.city}}, {{i.state}},<br>
+                            {{i.zipcode}}</p>
+                            <!-- btn -->
+        
+                            <div class="delete-address">
+                                <a href="{% url 'delete_address' i.address_id %}">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

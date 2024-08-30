@@ -1,0 +1,174 @@
+{% extends 'layout/base.html' %}
+
+
+{% block title %}
+Shop 
+{% endblock title %}
+    
+
+{% block main %}
+
+{% load static %}
+    <!-------Man Categories---------->
+    <div class="small-container" id="men">
+        <h2 class="title">Man Categories</h2>
+        <div class="categories_row">
+            
+            <!--First colomn-->
+            {% for i in shirt %}
+            <div class="col-4">
+                <div class="product-image">
+                    <a href="{% url 'categories' i.categories%}"><img src="{{i.categories_image.url}}" alt="image" class="img100"></a>
+                </div>
+                <div style="display: flex; margin-top: 10px;">
+                    <h4 style="margin-right: 10px;">{{i.categories}}</h4>
+                </div>
+            </div>
+            {% endfor %}
+
+            <!--Second colomn-->
+            {% for i in jeans %}
+            <div class="col-4">
+                <div class="product-image">
+                    <a href="{% url 'categories' i.categories%}"><img src="{{i.categories_image.url}}" alt="image" class="img100"></a>
+                </div>
+                <div style="display: flex; margin-top: 10px;">
+                    <h4 style="margin-right: 10px;">{{i.categories}}</h4>
+                </div>
+            </div>
+            {% endfor %}
+
+            <!--Third colomn-->
+            {% for i in trouser %}
+            <div class="col-4">
+                <div class="product-image">
+                    <a href="{% url 'categories' i.categories%}"><img src="{{i.categories_image.url}}" alt="image" class="img100"></a>
+                </div>
+                <div style="display: flex; margin-top: 10px; text-align: center;">
+                    <h4 style="margin-right: 10px;">{{i.categories}}</h4>
+                </div>
+            </div>
+            {% endfor %}
+
+            <!--Forth colomn-->
+            {% for i in trackpant %}
+            <div class="col-4">
+                <div class="product-image">
+                    <a href="{% url 'categories' i.categories%}"><img src="{{i.categories_image.url}}" alt="image" class="img100"></a>
+                </div>
+                <div style="display: flex; margin-top: 10px;">
+                    <h4 style="margin-right: 10px;">{{i.categories}}</h4>
+                </div>
+            </div>
+            {% endfor %}
+
+            <!--Fifth colomn-->
+            {% for i in shoes %}
+            <div class="col-4">
+                <div class="product-image">
+                    <a href="{% url 'categories' i.categories %}"><img src="{{i.categories_image.url}}" alt="image" class="img100"></a>
+                </div>
+                <div style="display: flex; margin-top: 10px;">
+                    <h4 style="margin-right: 10px;">{{i.categories}}</h4>
+                </div>
+            </div>
+            {% endfor %}
+
+            <!--Sixth colomn-->
+            {% for i in wallet %}
+            <div class="col-4">
+                <div class="product-image">
+                    <a href="{% url 'categories' i.categories%}"><img src="{{i.categories_image.url}}" alt="image" class="img100"></a>
+                </div>
+                <div style="display: flex; margin-top: 10px;">
+                    <h4 style="margin-right: 10px;">{{i.categories}}</h4>
+                </div>
+            </div>
+            {% endfor %}
+
+            <!--Seven colomn-->
+            {% for i in watch %}
+            <div class="col-4">
+                <div class="product-image">
+                    <a href="{% url 'categories' i.categories%}"><img src="{{i.categories_image.url}}" alt="image" class="img100"></a>
+                </div>
+                <div style="display: flex; margin-top: 10px;">
+                    <b><h4 style="margin-right: 10px;">{{i.categories}}</h4></b>
+                </div>
+            </div>
+            {% endfor %}
+
+            <!--Eighth colomn-->
+            {% for i in formal_suit %}
+            <div class="col-4">
+                <div class="product-image">
+                    <a href="{% url 'categories' i.categories%}"><img src="{{i.categories_image.url}}" alt="image" class="img100"></a>
+                </div>
+                <div style="display: flex; margin-top: 10px;">
+                    <h4 style="margin-right: 10px;">{{i.categories}}</h4>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <!-------Woman Categories---------->
+    <div class="small-container" id="men">
+        <h2 class="title">Woman Categories</h2>
+        <div class="categories_row">
+            
+            <!--First colomn-->
+            {% for i in top_jeans %}
+            <div class="col-4">
+                <div class="product-image">
+                    <a href="{% url 'categories' i.categories%}"><img src="{{i.categories_image.url}}" alt="image" class="img100"></a>
+                </div>
+                <div style="display: flex; margin-top: 10px;">
+                    <h4 style="margin-right: 10px;">{{i.categories}}</h4>
+                </div>
+            </div>
+            {% endfor %}
+
+            <!--Second colomn-->
+            {% for i in tops %}
+            <div class="col-4">
+                <div class="product-image">
+                    <a href="{% url 'categories' i.categories%}"><img src="{{i.categories_image.url}}" alt="image" class="img100"></a>
+                </div>
+                <div style="display: flex; margin-top: 10px;">
+                    <h4 style="margin-right: 10px;">{{i.categories}}</h4>
+                </div>
+            </div>
+            {% endfor %}
+
+            <!--Third colomn-->
+            {% for i in salwar_suit %}
+            <div class="col-4">
+                <div class="product-image">
+                    <a href="{% url 'categories' i.categories%}"><img src="{{i.categories_image.url}}" alt="image" class="img100"></a>
+                </div>
+                <div style="display: flex; margin-top: 10px; text-align: center;">
+                    <h4 style="margin-right: 10px;">{{i.categories}}</h4>
+                </div>
+            </div>
+            {% endfor %}
+
+            <!--Forth colomn-->
+            {% for i in frock %}
+            <div class="col-4">
+                <div class="product-image">
+                    <a href="{% url 'categories' i.categories%}"><img src="{{i.categories_image.url}}" alt="image" class="img100"></a>
+                </div>
+                <div style="display: flex; margin-top: 10px;">
+                    <h4 style="margin-right: 10px;">{{i.categories}}</h4>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+{% endblock %}
+
+    

@@ -1,0 +1,71 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+{% block main %}
+
+<!-- Forget password content section -->
+<div class="root-container">
+
+    <div class="font-style form-div-size form-border form-pos">
+        <!-- Text section -->
+        <div>
+            <h1 class="h1-f-size">Verify your OTP</h1>
+            <p style="margin-top: 4px;">Please enter the OTP which was sent to your given email account.</p>
+        </div>
+
+        <!-- Form section -->
+        <form method="post" action="{% url 'signup_otp'%}">
+            {% csrf_token %}
+            <!-- Input section -->
+            <div class="top-margin">
+                <input type="text" name="otp" id="otp" class="input-box otp-input" placeholder="000000" required="" maxlength="6"
+                    minlength="6">
+            </div>
+
+            <!-- Resend OTP timer section -->
+            <div class="resend-timer top-margin" style="display: none;">
+                Resend OTP in <span id="timer">60</span> seconds
+            </div>
+
+            <!-- Verify Button section -->
+            <div class="top-margin">
+                <button type="submit" class="submit-btn">Verify</button>
+            </div>
+
+        </form>
+    </div>
+
+    <!-- Forget password image section -->
+    <div class="image-container">
+        {% load static %}
+        <img src="{% static 'img/png-images/sign-in.png' %}" alt="" class="img100">
+    </div>
+
+</div>
+
+<!-- Footer -->
+
+<script>
+    // Function to start the resend OTP timer
+    function startResendTimer() {
+        var timerElement = document.getElementById("timer");
+        var seconds = 60;
+        var timerInterval = setInterval(function () {
+            seconds--;
+            timerElement.textContent = seconds;
+            if (seconds <= 0) {
+                clearInterval(timerInterval);
+                document.querySelector('.resend-timer').style.display = 'none';
+            }
+        }, 1000);
+        document.querySelector('.resend-timer').style.display = 'block';
+    }
+
+    // Start the timer when the page loads
+    startResendTimer();
+</script>
+
+{% endblock %}

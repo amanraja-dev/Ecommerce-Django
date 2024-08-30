@@ -1,0 +1,23 @@
+# Ignore compiled Python files
+# *.pyc
+# __pycache__
+.venv
+# Ignore environment-specific settings files
+# .env
+
+# Ignore database files
+# db.sqlite3
+
+# Ignore staticfiles directory (if you're using collectstatic)
+# staticfiles/
+
+# Ignore media files
+# media/
+
+# Ignore local development settings (if different from production)
+# local_settings.py
+
+# Ignore IDE or editor-specific files and directories
+.vscode/
+# .idea/
+# *.swp

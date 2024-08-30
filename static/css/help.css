@@ -1,0 +1,71 @@
+.address
+{
+    padding: 50px 0px;
+}
+.address-container{
+    margin: 0px 100px;
+    padding: 0px 15px;
+}
+.address-row1
+{
+    margin: 0px 0px 50px 0px;
+}
+.address-col
+{
+    max-width: 920px;
+}
+.address-col h1{
+    font-weight: 700;
+    font-size: 56px;
+    font-family: "Poppins", sans-serif;
+
+}
+.address-col p{
+    color: #747579;
+    font-size: 20px;
+    font-family: "DM Sans", sans-serif;
+
+}
+.address-row2
+{
+    display: flex;
+}
+.contact-card{
+    margin: 26px 0px 0px;
+    padding: 0px 13px;
+}
+.card-content
+{
+    max-width: 310px;
+    height: 200px;
+    padding: 20px;
+    border: 0px solid black;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 1px 1px 5px 0px gray;
+}
+.card-content h5
+{
+    font-size: 21px;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 10px;
+}
+.card-content p
+{
+    color: #747579;
+    font-size: 16px;
+    font-family: "DM Sans", sans-serif;
+    margin-bottom: 16px;
+}
+
+.contanct-btn
+{
+    padding: 7px 7px;
+    font-size: 13px;
+    font-family: "DM Sans", sans-serif;
+
+    color: white;
+    background-color: #089a08;
+    border: 0px solid #089a08;
+    border-radius: 5px;
+}

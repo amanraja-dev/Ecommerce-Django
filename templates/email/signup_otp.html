@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGNUP VERIFICATION CODE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .otp-code {
+            background-color: #f0f0f0;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .footer {
+            text-align: center;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SIGNUP VERIFICATION OTP</h1>
+        <p>Hi {{ first_name }} {{ last_name }},</p>
+        <p>Please use the following OTP to verify your account on OURSHOP website:</p>
+        <div class="otp-code">{{ otp }}</div>
+        <p>If you didn't request this OTP, please ignore this message.</p>
+        <p class="footer">Best regards,<br>OURSHOP Team</p>
+    </div>
+</body>
+</html>

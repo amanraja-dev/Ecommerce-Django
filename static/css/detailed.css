@@ -1,0 +1,99 @@
+.single-product-container
+        {
+            background-color: #fff;
+            margin: 50px 0px;
+            height: auto;
+        }
+        .single-product-row
+        {
+            margin: 0px 100px;
+            padding: 20px 50px;
+            display: inline-flex;
+            flex-wrap: wrap;
+            background-color: rgb(243, 243, 243);
+        }
+        .single-product-col-1
+        {
+            max-width: 460px;
+            margin: 10px;
+        }
+        .big-image-div
+        {
+            width: 310px;
+            height: 430px;
+        }
+        .small-image-div
+        {
+            width: 115px;
+            height: 70px;
+        }
+        .small-images-collection
+        {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 5px;
+            max-width: 460px;
+        }
+        .single-product-col-2
+        {
+            max-width: 460px;
+            margin: 10px;
+        }
+        .btn-collection
+        {
+            display: inline-flex;
+            flex-wrap: wrap;
+            height: 70px;
+            margin-top: 5px;
+        }
+        .wishlist-btn
+        {
+            width: 200px;
+            height: 50px;
+            color: #fff;
+            background-color: rgb(54, 142, 54);
+            border: 0px;
+            margin: 0px 5px;
+            border-radius: 5px;
+        }
+        .buynow-btn
+        {
+            width: 200px;
+            height: 50px;
+            color: #fff;
+            background-color: rgb(220, 53, 53);
+            border: 0px;
+            margin: 0px 5px;
+            border-radius: 5px;
+        }
+        .info
+        {
+            height: 375px;
+        }
+        .mt-50
+        {
+            margin-top: 30px;
+        }
+        .input-collection
+        {
+            display: inline-flex;
+            flex-wrap: wrap;
+        }
+        .input-collection input
+        {
+            width: 200px;
+            height: 30px;
+            padding-left: 20px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            margin: 0px 5px;
+        }
+        .input-collection select
+        {
+            width: 200px;
+            height: 30px;
+            padding-left: 20px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            margin: 0px 5px;
+        }

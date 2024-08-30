@@ -1,0 +1,150 @@
+.root-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.image-container {
+  margin: 0px 50px;
+  transition: transform 0.3s ease;
+}
+
+.font-style {
+  color: #787b7d;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: inter, sans-serif;
+}
+
+.form-div-size {
+  max-width: 450px;
+  margin: 0px 50px;
+}
+
+.form-border {
+  border: 0px solid gray;
+}
+
+.h1-f-size {
+  color: #001E2B;
+  font-size: 27px;
+}
+
+.p-size {
+  font-size: 14px;
+}
+
+.display {
+  display: flex;
+}
+
+.input-box {
+  width: 100%;
+  height: 50px;
+  padding: 0px 20px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.input-box::-webkit-input-placeholder {
+  /* Edge */
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.input-box:hover {
+  box-shadow: 0px 3px 7px gray;
+}
+
+.input-box:focus{
+  outline: 3px #0AAD0A solid;
+}
+
+.otp-input{
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 10px;
+  text-align: center;
+}
+.otp-input::placeholder{
+  font-size: 20px;
+}
+
+
+.top-margin {
+  margin-top: 15px;
+}
+
+/* Submit button css */
+.submit-btn {
+  width: 100%;
+  height: 50px;
+  color: white;
+  background-color: #0AAD0A;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  box-shadow: 0px 3px 7px gray;
+}
+
+.link-css {
+  color: #0AAD0A;
+  text-decoration: none;
+}
+
+.fp-position {
+  flex: 1;
+  text-align: right;
+}
+
+.user-address-container {
+  width: 200px;
+  max-width: 300px;
+  height: 200px;
+  max-height: 300px;
+  margin: 0px 20px;
+  padding: 25px;
+  border: 1px solid gray;
+  border-radius: 25px;
+  box-shadow: 0px 5px 10px 0px gray;
+}
+
+.address-title {
+  font-size: 14px;
+  margin-bottom: 16px;
+  color: black;
+}
+
+.address-title-pos {
+  margin-bottom: 20px;
+}
+
+.address-details {
+  font-size: 14px;
+  font-weight: bold;
+  color: #5C6C75;
+}
+
+.delete-address {
+  margin-top: 20px;
+}
+
+.delete-address a {
+  color: #0AAD0A;
+  text-decoration: none;
+}
+
+#passwordError{
+  font-size: 11px;
+  color: red;
+  margin-top: 5px;
+
+}

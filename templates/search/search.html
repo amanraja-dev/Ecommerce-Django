@@ -1,0 +1,41 @@
+{% extends 'layout/base.html' %}
+
+
+{% block title %}
+Home 
+{% endblock title %}
+    
+
+{% block main %}
+
+{% load static %}
+
+    <!------- Search product---------->
+    <div class="small-container" id="men">
+
+        <h2 class="title">Search Products</h2>
+        
+        <div class="row">
+        {% if searchresult %}
+        {% for i in searchresult %}
+            <!-- colomn for single product -->
+        <div class="col-4">
+            <div class="product-image">
+                <a href="{% url 'spdpage' i.product_id %}"><img src="{{i.product_image.url}}" alt="image" class="img100"></a>
+            </div>
+            <div style="display: flex; margin-top: 10px;">
+                <h4 style="margin-right: 10px;">{{i.product_name}}</h4>
+            </div>
+            <div style="margin-top: 5px;">
+                <b>₹{{i.selling_price}}</b>  ₹<strike>{{i.original_price}}</strike> <br>
+                <small>{{i.product_desc}}</small>
+            </div>
+        </div>
+        
+        {% endfor %}
+        {% endif %}
+        
+        </div>
+    </div>
+        
+    {% endblock %}

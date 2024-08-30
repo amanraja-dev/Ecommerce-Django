@@ -1,0 +1,360 @@
+:root {
+    --black--color: black;
+    --white--color: white;
+    --green--color: green;
+    --gray--color: gray;
+}
+
+.img100 {
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15%;
+    box-shadow: 0px 1px 2px gray;
+    background-color: var(--white--color);
+}
+
+.brand {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.search {
+    display: inline-flex;
+    max-width: 500px;
+    margin: 0px 10px;
+}
+
+.search form {
+    max-width: 500px;
+}
+
+.searchbox {
+    height: 40.6px;
+    width: 200px;
+    padding: 8.8px 16px;
+    border: 1px solid gray;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.search-box::-webkit-input-placeholder {
+    /* Edge */
+    font-weight: bold;
+}
+
+.search-box:focus {
+    outline: none;
+    border: 1px solid #0AAD0A;
+}
+
+.search-btn {
+    height: 40.6px;
+    background-color: #fff;
+    padding: 8.8px 16px;
+    border: 1px solid gray;
+    border-left: none;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.location {
+    margin: 0px 20px;
+}
+
+.location-btn {
+    height: 40.6px;
+    background-color: #fff;
+    padding: 8.8px 50px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.icons {
+    display: flex;
+}
+
+.icon {
+    margin-left: 10px;
+    border-radius: 50%;
+    padding: 5px;
+    transition: all 0.3s ease;
+}
+
+.icon:hover {
+    transform: translateY(-5px);
+}
+
+.icon-img {
+    width: 40px;
+    height: 40px;
+}
+
+.department {
+    max-width: 200px;
+    max-height: 40.6px;
+}
+
+.department button {
+    color: white;
+    background-color: #0AAD0A;
+    height: 40.6px;
+    width: 200px;
+    border-radius: 5px;
+    background-color: #0AAD0A;
+    border: 1px solid;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav a {
+    text-decoration: none;
+    letter-spacing: 0.4px;
+    color: var(--black--color);
+    font-weight: 580;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav ul li a:hover {
+    background-color: #f2f2f2;
+}
+
+.dropdown {
+    display: block;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 5px;
+    width: 200px;
+    overflow: hidden;
+    max-height: 0;
+    /* Initially hide the dropdown */
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    /* Apply transitions to max-height and opacity */
+    opacity: 0;
+    /* Initially hide the dropdown */
+}
+
+.nav ul li:hover .dropdown {
+    max-height: 200px;
+    /* Set the maximum height to show the dropdown */
+    opacity: 1;
+    /* Make the dropdown visible */
+    transition-delay: 0.3s;
+    /* Add a delay to the transition */
+}
+
+.categories_button:hover .dropdown {
+    display: block;
+    position: absolute;
+    top: 32px;
+    background-color: #fff;
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 10px;
+}
+
+.dropdown ul {
+    display: block;
+}
+
+.dropdown ul li {
+    display: flex;
+    transition: all 0.3s ease;
+}
+
+.dropdown ul li a {
+    display: flex;
+    padding: 15px 30px;
+    width: 100%;
+}
+
+.username {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+/* HOME PAGE FIRST VIEW css */
+.Shop {
+    padding: 0px 100px;
+    height: 90vh;
+    text-align: center;
+}
+
+#Shop-bt-position {
+    margin-top: 25px;
+}
+
+.Shop-Now {
+    text-decoration: none;
+    color: #fff;
+    background-color: #0AAD0A;
+    font-size: 14px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    transition: all 0.4s ease;
+}
+
+.Shop-Now:hover {
+    background-color: #088708;
+    box-shadow: 0px 2px 10px 0px gray;
+    transform: translateY(-5px);
+}
+
+.SHOP-CATEGORIES {
+    margin: 50px 0px;
+    width: 100%;
+}
+
+.col-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0px 200px;
+}
+
+.cmn-div {
+    margin: 10px 20px;
+    width: 300px;
+    height: auto;
+}
+
+.title {
+    color: #fff;
+    padding: 0px 200px;
+}
+
+.home-image {
+    height: 480px;
+    width: 500px;
+}
+
+.empty-cart-image {
+    height: 480px;
+    width: 650px;
+}
+
+.image {
+    width: 100%;
+    height: 500px;
+    border-radius: 50px;
+}
+
+.product-container {
+    display: flex;
+}
+
+.product-position {
+    margin: 25px;
+    background-color: #fff;
+    border-radius: 50px;
+}
+
+/* OFFER CSS */
+
+.offer {
+    background: white;
+    margin-top: 80px;
+    padding: 30px 0;
+}
+
+.small-containers {
+    max-width: 1000px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: white;
+}
+
+.offer-row {
+    display: flex;
+}
+
+.offer-col img {
+    height: 300px;
+    width: 200px;
+}
+
+/* */
+.sidenav {
+    height: 100%;
+    width: 0px;
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+    transition: 0.5s;
+    top: 0;
+    right: 0;
+    background-color: rgb(248, 248, 248);
+    box-shadow: 0 -1px 5px 0 black;
+    margin-top: 80px;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    margin-top: 10px;
+    margin-left: 25px;
+    font-size: 36px;
+    text-decoration: none;
+    color: black;
+    padding: 2.5px 5px;
+}
+
+.sidenav .closebtn:hover {
+    background-color: rgb(241, 243, 243);
+}
+
+.search-box {
+    width: 200px;
+    height: 40px;
+    padding: 10px 20px;
+    border: 1px solid gray;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.search-box::-webkit-input-placeholder {
+    /* Edge */
+    font-weight: bold;
+}
+
+.search-box:focus {
+    outline: none;
+    border: 0.5px solid gray;
+}
+
+.search-btn {
+    font-size: 12px;
+    font-weight: normal;
+    color: #fff;
+    background-color: #059105;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.icon-css {
+    height: 15px;
+    width: 15px;
+    color: #000000;
+}
+
+.message-css {
+    margin-bottom: 0px;
+    position: static;
+}

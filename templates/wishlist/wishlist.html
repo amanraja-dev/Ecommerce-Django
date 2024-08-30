@@ -1,0 +1,38 @@
+{% extends 'layout/base.html' %}
+
+
+{% block title %}
+Home 
+{% endblock title %}
+    
+
+{% block main %}
+
+{% load static %}
+
+    <!------- Man Shop---------->
+    <div class="small-container">
+        <h2 class="title">Wishlist Products</h2>
+        <div class="row">
+            {% for i in wishlist_product %}
+            <!-- colomn for single product -->
+            <div class="col-4">
+                <div class="product-image">
+                    <a href="{% url 'spdpage' i.product.product_id %}"><img src="{{i.product.product_image.url}}" alt="image" class="img100"></a>
+                </div>
+                <div style="display: flex; margin-top: 10px;">
+                    <h4 style="margin-right: 10px;">{{i.product.product_name}}</h4>
+                </div>
+                <div style="margin-top: 5px;">
+                    <b>₹{{i.product.selling_price}}</b> 
+                    <a href="{% url 'remove_from_wishlist' i.product.product_id%}" >
+                        <img src="/static/img/png-images/trash.png" alt="" class="trash-css">
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div> 
+
+    
+{% endblock %}

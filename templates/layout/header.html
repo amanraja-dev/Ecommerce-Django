@@ -1,0 +1,55 @@
+{% load static %}
+<header class="header">
+    <div class="brand">
+        <p>OURSHOP</p>
+    </div>
+
+    <nav class="nav">
+        <ul>
+            <li>
+                <a href="{% url 'home' %}">Home</a>
+            </li>
+            <li>
+                <a href="{% url 'shop' %}">Shop</a>
+                <div class="dropdown">
+                    <ul>
+                        <li><a href="{% url 'manshop' %}">Men</a></li>
+                        <li><a href="{% url 'womanshop' %}">Women</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="{% url 'help' %}">Help</a>
+            </li>
+            <li>
+                <a href="{% url 'aboutus' %}">About</a>
+            </li>
+            <li>
+                <a href="">Account</a>
+                <div class="dropdown">
+                    <ul>
+                        <li><a href="{% url 'profile' %}">Profile</a></li>
+
+                        {% if user.is_authenticated %}
+                        <li><a href="{% url 'order' %}">Order</a></li>
+                        <li><a href="{% url 'logout' %}">Logout</a></li>
+                        {% else %}
+                        <li><a href="{% url 'signin' %}">Login</a></li>
+                        <li><a href="{% url 'signup' %}">Register</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="icons">
+        <a href="{% url 'wishlist' %}" class="icon wish"><img src="{% static 'img/wishlist.png' %}" alt="wishlist"
+                class="icon-img"></a>
+        <a href="{% url 'cart' %}" class="icon cart"><img src="{% static 'img/cart.png' %}" alt="wishlist"
+                class="icon-img"></a>
+        <a href="{% url 'profile' %}" class="icon prof"><img src="{% static 'img/profile.png' %}" alt="wishlist"
+                class="icon-img"></a>
+    </div>
+
+</header>

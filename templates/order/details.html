@@ -1,0 +1,85 @@
+{% extends 'layout/base.html' %}
+
+
+{% block title %}
+Home 
+{% endblock title %}
+    
+
+{% block main %}
+
+{% load static %}
+
+    <!-- Single Product Detailed Page-->
+    <div class="single-product-container">
+
+        <!--Row of single product details section-->
+        <div class="single-product-row">
+
+            {% for i in O_P_dtls %}
+            <!--Colom first of single product details section-->
+            <div class="single-product-col-1">
+                <div class="big-image-div">
+                    <img src="{{i.product.product_image.url}}" alt="image" id="big-image" class="img100">
+                </div>
+            </div>
+
+            <!--Colom second of single product details section-->
+            <div class="single-product-col-2">
+
+                <div class="info">
+                    <h3>User details</h3>
+
+                    <div class="mt-50">
+                        <h3>User Name: {{i.product.product_name}}</h3>
+                        <h4>Purchase Amount: {{i.product.selling_price}}</h4>
+                    </div>
+                    
+                    <div class="mt-50">
+                        <b>Product details</b> <br>
+                        <br>
+                        <b>Brand Name : </b> {{i.brand}} <br>
+                        <b>Colour : </b> {{i.colour}}
+                    </div>
+                    
+                    <div class="mt-50">
+                        <b>Discriptions</b> <br>
+                        <br>
+                         <p>{{i.product_desc}}</p>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!--Colom second of single product details section-->
+            <div class="single-product-col-2">
+
+                <div class="info">
+                    <h3>Product details</h3>
+
+                    <div class="mt-50">
+                        <h3>{{i.product.product_name}}</h>
+                        <h4>{{i.product.selling_price}}</h4>
+                    </div>
+                    
+                    <div class="mt-50">
+                        <b>Product details</b> <br>
+                        <br>
+                        <b>Brand Name : </b> {{i.brand}} <br>
+                        <b>Colour : </b> {{i.colour}}
+                    </div>
+                    
+                    <div class="mt-50">
+                        <b>Discriptions</b> <br>
+                        <br>
+                         <p>{{i.product_desc}}</p>
+                    </div>
+                    
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+<!--Footer-->
+{% endblock %}

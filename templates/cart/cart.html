@@ -1,0 +1,74 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}
+Cart
+{% endblock title %}
+
+{% block main %}
+
+{% load static %}
+
+{% if carts %}
+<div class="cart-container">
+    <div class="cart-item-box">
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+            </tr>
+            {% for i in carts %}
+            <tr>
+                <td>
+                    <div class="cart-product-dtl">
+                        <img src="{{i.product.product_image.url}}" alt="product image">
+                        <div>
+                            <p>{{i.product.product_name}}</p>
+                            <small>Price: {{i.product.selling_price}}</small>
+                            <br>
+                            <a href="{% url 'remove_from_cart' i.product.product_id %}">Remove<img src="/static/img/png-images/trash.png" alt="" class="trash-css"></a>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <input type="number" value="1" min="1" max="5">
+                </td>
+                <td>INR {{i.product.selling_price}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="total-price">
+        <table>
+            <tr>
+                <td>Subtotal</td>
+                <td>INR {{amount}}</td>
+            </tr>
+            <tr>
+                <td>Shipping</td>
+                <td>INR {{shipping_amount}}</td>
+            </tr>
+            <tr>
+                <!---->
+                <td>Total</td>
+                <td>INR {{total_amount}}</td>
+                <!---->
+            </tr>
+        </table>
+        <div class="">
+            <form action="{% url 'payment_address' %}">
+                <button type="submit" class="place_order_button">Place Order</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="Shop">
+    <img src="/static/img/png-images/empty cart.png" alt="Empty cart image" class="empty-cart-image">
+    <h1>YOUR CART IS EMPTY.</h1>
+    <div id="Shop-bt-position"><a href="{% url 'shop' %}" class="Shop-Now">Shop Now &#8594;</a></div>
+</div>
+{% endif %}
+
+{% endblock %}

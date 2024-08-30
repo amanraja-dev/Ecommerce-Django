@@ -1,0 +1,85 @@
+{% extends 'layout/base.html' %}
+
+
+{% block title %}
+Details 
+{% endblock title %}
+    
+
+{% block main %}
+
+{% load static %}
+
+    <!-- Single Product Detailed Page-->
+    <div class="single-product-container">
+
+        <!--Row of single product details section-->
+        <div class="single-product-row">
+
+            {% for i in S_P_dtls %}
+            <!--Colom first of single product details section-->
+            <div class="single-product-col-1">
+                <div class="big-image-div">
+                    <img src="{{i.product_image.url}}" alt="image" id="big-image" class="img100">
+                </div>
+            </div>
+
+            <!--Colom second of single product details section-->
+            <div class="single-product-col-2">
+
+                <div class="info">
+                    <h1>Man shop</h1>
+
+                    <div class="mt-50">
+                        <h3>{{i.product_name}}</h>
+                        <h4>{{i.selling_price}}</h4>
+                    </div>
+                    
+                    <!--
+                    <div class="input-collection mt-50">
+                        <input type="number" value="1" min="1" max="5">
+                        <select name="" id="">
+                            <option value="NULL">Size</option>
+                            <option value="small">small</option>
+                            <option value="medium">medium</option>
+                            <option value="large">large</option>
+                        </select>
+                    </div>
+                   -->
+
+                    <div class="mt-50">
+                        <b>Product details</b> <br>
+                        <br>
+                        <b>Brand Name : </b> {{i.brand}} <br>
+                        <b>Colour : </b> {{i.colour}}
+                    </div>
+                    
+                    <div class="mt-50">
+                        <b>Discriptions</b> <br>
+                        <br>
+                         <p>{{i.product_desc}}</p>
+                    </div>
+                    
+                </div>
+                <div class="btn-collection">
+
+                    <form method="post" action="{% url 'add_to_wishlist' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="product_id" value="{{i.product_id}}"">
+                        <button class="wishlist-btn" type="submit">ADD TO WISHLIST</button>
+                    </form>
+                    
+                    <form  method="post" action="{% url 'add_to_cart'%}">
+                        {% csrf_token %}
+                        <input type="hidden" name="product_id" value="{{i.product_id}}">
+                        <button class="buynow-btn" type="submit">BUY NOW</button>
+                    </form>
+                    
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+<!--Footer-->
+{% endblock %}

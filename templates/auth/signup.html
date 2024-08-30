@@ -1,0 +1,109 @@
+{% extends 'layout/base.html' %} 
+
+{% block title %} Signin {% endblock title %}
+
+{% block main %} 
+
+{% load static %}
+
+<div class="root-container">
+  <div class="font-style form-div-size form-border form-pos">
+    <!--Text section-->
+    <div>
+      <h1 class="h1-f-size">Get Start Shopping</h1>
+      <p style="margin-top: 4px">
+        Welcome to Ourshop! Enter your email to get started.
+      </p>
+    </div>
+
+    <!--Form section-->
+    <form
+      method="post"
+      action="{% url 'signup'%}"
+      name="myform"
+      onsubmit="return validateForm()"
+    >
+      {% csrf_token %}
+      <!--Input section-->
+      <div class="top-margin">
+        <input
+          type="text"
+          name="first_name"
+          id="first_name"
+          class="input-box"
+          placeholder="First name"
+          aria-label="First name"
+          minlength="2"
+          maxlength="20"
+          required=""
+          oninput="validateAndTransform(this)"
+        />
+      </div>
+
+      <div class="top-margin">
+        <input
+          type="text"
+          name="last_name"
+          id="last_name"
+          class="input-box"
+          placeholder="Last name"
+          aria-label="Last name"
+          minlength="2"
+          maxlength="20"
+          required=""
+          oninput="validateAndTransform(this)"
+        />
+      </div>
+
+      <div class="top-margin">
+        <input
+          type="email"
+          name="email"
+          class="input-box"
+          id="inputEmail4"
+          placeholder="Email"
+          required=""
+          oninput="validateAndTransformEmail(this)"
+        />
+      </div>
+
+      <div class="top-margin">
+        <input
+          type="password"
+          name="password"
+          class="input-box"
+          id="inputPassword4"
+          placeholder="Password"
+          minlength="8"
+          required=""
+          oninput="validatePassword(this)"
+        />
+        <div id="passwordError"></div>
+      </div>
+
+      <!-- Register Button section-->
+      <div class="top-margin">
+        <button type="submit" class="submit-btn" onmouseover="onlystring()">
+          Register
+        </button>
+      </div>
+
+      <!-- Text -->
+      <p class="top-margin">
+        <small
+          >By continuing, you agree to our
+          <a href="#!" class="link-css"> Terms of Service</a> &amp;
+          <a href="#!" class="link-css">Privacy Policy</a>
+        </small>
+      </p>
+    </form>
+  </div>
+
+  <!--Sign-up image section-->
+  <div class="image-container">
+    <img src="/static/img/png-images/sign-up.png" alt="" class="img100" />
+  </div>
+</div>
+
+<!--Footer-->
+{% endblock %}
