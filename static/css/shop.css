@@ -1,8 +1,6 @@
 .small-container{
-    max-width: 1070px;
-    margin: 10px auto;
-    padding-left: 25px;
-    padding-right: 25px;
+    max-width: 100%;
+    margin: 10px 10%;
     background-color: rgb(246,246,246);
     font-family: inter,sans-serif;
 }

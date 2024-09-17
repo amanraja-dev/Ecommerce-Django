@@ -1,54 +1,86 @@
-{% extends 'layout/base.html' %}
+{% extends 'layout/base.html' %} 
 
+{% block title %} Forget Password {% endblock %} 
 
-{% block title %}
-Forget Password
-{% endblock title %}
-
-
-{% block main %}
+{% block main %} 
 
 {% load static %}
 
 <!--Forget password content section-->
 <div class="root-container">
-
-    <div class="font-style form-div-size form-border form-pos">
-        <!--Text section-->
-        <div>
-            <h1 class="h1-f-size">Forgot your password?</h1>
-            <p style="margin-top: 4px;">Please enter the email address associated with your account and We will email
-                you a link to reset your password.</p>
-        </div>
-
-        <!--Form section-->
-        <form method="post" action="{% url 'verify_reset_password_otp'%}" id="forgetPasswordForm">
-            {% csrf_token %}
-            <!-- Input section -->
-            <div class="top-margin">
-                <input type="email" name="email" id="email" class="input-box" placeholder="Registered Email"
-                    required="">
-            </div>
-
-            <!-- OTP input field -->
-            <div class="otp-section" id="otpSection" style="display: none;">
-                <input type="text" name="otp" id="otp" class="input-box" placeholder="Enter OTP" required="">
-            </div>
-
-            <!-- Forget Button section -->
-            <div class="top-margin">
-                <button type="button" id="forgetPasswordBtn" class="submit-btn" onclick="sendOTP()">Send OTP</button>
-                <button type="submit" id="resetPasswordBtn" class="submit-btn" onclick="sendOTP()" style="display: none;">Reset
-                    Password</button>
-            </div>
-        </form>
+  <div class="font-style form-div-size form-border form-pos">
+    <!--Text section-->
+    <div>
+      <h1 class="h1-f-size">Forgot your password?</h1>
+      <p style="margin-top: 4px">
+        Please enter the email address associated with your account and We will
+        email you a link to reset your password.
+      </p>
     </div>
 
-    <!--Forget password image section-->
-    <div class="image-container">
-        <img src="{% static 'img/png-images/sign-in.png' %}" alt="" class="img100">
-    </div>
+    <!--Form section-->
+    <form
+      method="post"
+      action="{% url 'verify_reset_password_otp'%}"
+      id="forgetPasswordForm"
+    >
+      {% csrf_token %}
+      <!-- Input section -->
+      <div class="top-margin">
+        <input
+          type="email"
+          name="email"
+          id="email"
+          class="input-box"
+          placeholder="Registered Email"
+          oninput="validateAndTransformEmail(this)"
+          required=""
+        />
+      </div>
 
+      <!-- OTP input field -->
+      <div class="otp-section" id="otpSection" style="display: none">
+        <input
+          type="text"
+          name="otp"
+          id="otp"
+          class="input-box"
+          placeholder="Enter OTP"
+          required=""
+        />
+      </div>
+
+      <!-- Forget Button section -->
+      <div class="top-margin">
+        <button
+          type="button"
+          id="forgetPasswordBtn"
+          class="submit-btn"
+          onclick="sendOTP()"
+        >
+          Send OTP
+        </button>
+        <button
+          type="submit"
+          id="resetPasswordBtn"
+          class="submit-btn"
+          onclick="sendOTP()"
+          style="display: none"
+        >
+          Reset Password
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!--Forget password image section-->
+  <div class="image-container">
+    <img
+      src="{% static 'img/png-images/sign-in.png' %}"
+      alt=""
+      class="img100"
+    />
+  </div>
 </div>
 
 <!--Footer-->

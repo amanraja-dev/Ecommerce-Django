@@ -62,9 +62,7 @@ class AuthenticationMiddleware:
             response['Pragma'] = 'no-cache'
             response['Expires'] = '0'
 
-        return response
-    
-    
+        return response 
     
 class LogoutMiddleware:
     def __init__(self, get_response):

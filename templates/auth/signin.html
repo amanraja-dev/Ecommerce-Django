@@ -1,69 +1,83 @@
-{% extends 'layout/base.html' %}
+{% extends 'layout/base.html' %} 
 
+{% block title %} Login {% endblock title %} 
 
-{% block title %}
-Login 
-{% endblock title %}
-    
+{% block main %} {% load static %}
 
-{% block main %}
-
-{% load static %}
-
-    <!--Sign in content section-->
-    <div class="root-container">
-
-      <div class="font-style form-div-size form-border form-pos">
-        <!--Text section-->
-        <div>
-          <h1 class="h1-f-size">Sign in to OUR SHOP</h1>
-          <p style="margin-top: 4px;">Welcome back to Ourshop! Enter your email to get started.</p>
-        </div>
-        
-        <!--Form section-->
-        <form method="post" action="{% url 'signin'%}">
-        {% csrf_token %}
-        <div>
-
-            <!--Input Section-->
-            <div class="top-margin">
-              <input type="email" name="username" class="input-box" id="inputEmail4" placeholder="Username" required="">
-            </div>
-  
-            <!--Input Section-->
-            <div class="top-margin">
-              <input type="password" name="password" class="input-box" id="inputPassword4" placeholder="Password" required="">
-            </div>
-          
-            <!--Input Section-->
-            <div class="top-margin display">
-              <div>
-                <input class="" type="checkbox" value="">
-                <label class="" for="flexCheckDefault">Remember me</label>
-              </div>
-              <div class="fp-position"> Forgot password? 
-                <a href="{% url 'forget_password' %}" class="link-css" >Reset It</a>
-              </div>
-            </div>
-        
-            <!-- Sign in Button section-->
-            <div class="top-margin"> 
-              <button type="submit" class="submit-btn">Sign In</button>
-            </div>
-      
-            <div class="top-margin">Don’t have an account? <a href="{% url 'signup' %}" class="link-css "> Sign Up</a></div>
-    
-          </div>
-        </form>
-      </div>
-    
-      <!--Sign-in image section-->
-    
-      <div class="image-container">
-          <img src="/static/img/png-images/sign-in.png" alt="" class="img100">
-      </div>
-
+<!--Sign in content section-->
+<div class="root-container">
+  <div class="font-style form-div-size form-border form-pos">
+    <!--Text section-->
+    <div>
+      <h1 class="h1-f-size">Sign in to OUR SHOP</h1>
+      <p style="margin-top: 4px">
+        Welcome back to Ourshop! Enter your email to get started.
+      </p>
     </div>
+
+    <!--Form section-->
+    <form method="post" action="{% url 'signin'%}">
+      {% csrf_token %}
+      <div>
+        <!--Input Section-->
+        <div class="top-margin">
+          <input
+            type="email"
+            name="username"
+            class="input-box"
+            id="inputEmail4"
+            placeholder="Username"
+            oninput="validateAndTransformEmail(this)"
+            required=""
+          />
+        </div>
+
+        <!--Input Section-->
+        <div class="top-margin">
+          <input
+            type="password"
+            name="password"
+            class="input-box"
+            id="inputPassword"
+            placeholder="Password"
+            required
+          />
+          <button type="button" class="toggle-button">
+            <span class="material-symbols-outlined" id="togglePassword">lock</span>
+          </button>
+        </div>
+
+        <!--Input Section-->
+        <div class="top-margin display">
+          <div>
+            <input class="" type="checkbox" value="" />
+            <label class="" for="flexCheckDefault">Remember me</label>
+          </div>
+          <div class="fp-position">
+            Forgot password?
+            <a href="{% url 'forget_password' %}" class="link-css">Reset It</a>
+          </div>
+        </div>
+
+        <!-- Sign in Button section-->
+        <div class="top-margin">
+          <button type="submit" class="submit-btn">Sign In</button>
+        </div>
+
+        <div class="top-margin">
+          Don’t have an account?
+          <a href="{% url 'signup' %}" class="link-css"> Sign Up</a>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!--Sign-in image section-->
+
+  <div class="image-container">
+    <img src="/static/img/png-images/sign-in.png" alt="" class="img100" />
+  </div>
+</div>
 
 <!--Footer-->
 {% endblock %}
