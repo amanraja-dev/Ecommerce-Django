@@ -1,7 +1,7 @@
 :root {
     --black--color: black;
     --white--color: white;
-    --green--color: green;
+    --green--color: #0AAD0A;
     --gray--color: gray;
 }
 
@@ -17,10 +17,10 @@
     top: 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 15%;
-    box-shadow: 0px 1px 2px gray;
+    justify-content: space-around;
+    box-shadow: 0px 1px 1px rgb(193, 193, 193);
     background-color: var(--white--color);
+    z-index: 999;
 }
 
 .brand {
@@ -80,22 +80,25 @@
 
 .icons {
     display: flex;
+    margin-left: 10px;
+    align-items: center;
 }
 
 .icon {
-    margin-left: 10px;
     border-radius: 50%;
     padding: 5px;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
+    display: flex;
+    align-items: center;
 }
 
 .icon:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
 }
 
 .icon-img {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
 }
 
 .department {
@@ -193,7 +196,7 @@
 
 /* HOME PAGE FIRST VIEW css */
 .Shop {
-    padding: 0px 100px;
+    padding: 0 5%;
     height: 90vh;
     text-align: center;
 }
@@ -236,14 +239,14 @@
     height: auto;
 }
 
-.title {
-    color: #fff;
-    padding: 0px 200px;
-}
-
 .home-image {
-    height: 480px;
-    width: 500px;
+    height: 65vh;
+    width: auto;
+}
+.home{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .empty-cart-image {
@@ -285,6 +288,11 @@
 
 .offer-row {
     display: flex;
+    flex-wrap: wrap;
+}
+
+.offer-col{
+    width: 50%;
 }
 
 .offer-col img {
@@ -358,3 +366,4 @@
     margin-bottom: 0px;
     position: static;
 }
+

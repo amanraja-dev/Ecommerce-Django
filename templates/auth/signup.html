@@ -72,13 +72,16 @@
           type="password"
           name="password"
           class="input-box"
-          id="inputPassword4"
+          id="inputPassword"
           placeholder="Password"
           minlength="8"
           required=""
           oninput="validatePassword(this)"
         />
-        <div id="passwordError"></div>
+        <button type="button" class="toggle-button">
+          <span class="material-symbols-outlined" id="togglePassword">lock</span>
+        </button>
+        {% comment %} <div id="passwordError"></div> {% endcomment %}
       </div>
 
       <!-- Register Button section-->

@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 90vh;
 }
 
 .image-container {
@@ -46,6 +46,7 @@
   border: 1px solid gray;
   border-radius: 5px;
   font-size: 15px;
+  transition: all 0.3s ease-in;
 }
 
 .input-box::-webkit-input-placeholder {
@@ -55,11 +56,12 @@
 }
 
 .input-box:hover {
-  box-shadow: 0px 3px 7px gray;
+  box-shadow: 0px 1px 7px gray;
 }
 
 .input-box:focus{
   outline: 3px #0AAD0A solid;
+  border-width: 0px;
 }
 
 .otp-input{
@@ -70,11 +72,6 @@
 }
 .otp-input::placeholder{
   font-size: 20px;
-}
-
-
-.top-margin {
-  margin-top: 15px;
 }
 
 /* Submit button css */
@@ -147,4 +144,26 @@
   color: red;
   margin-top: 5px;
 
+}
+
+.top-margin {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  z-index: 990;
+}
+
+.input-box {
+  padding-right: 60px; /* Add padding to avoid overlap with the button */
+}
+
+.toggle-button {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 14px;
 }
